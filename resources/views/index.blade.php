@@ -710,7 +710,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="#">Kirby T-Shirt</a></h6>
+                <h6 class="pc__title"><a href="#"></a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$17</span>
                 </div>
@@ -856,7 +856,7 @@
               </div>
 
               <div class="pc__info position-relative">
-                <h6 class="pc__title"><a href="#">Kirby T-Shirt</a></h6>
+                <h6 class="pc__title"><a href="#"></a></h6>
                 <div class="product-card__price d-flex align-items-center">
                   <span class="money price text-secondary">$17</span>
                 </div>

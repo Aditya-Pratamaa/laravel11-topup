@@ -18,9 +18,16 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-    public function brands()
+    public function brands(Request $request)
     {
-        $brands = Brand::orderBy('id', 'DESC')->paginate(5);
+        $search = $request->query('search');
+
+        $brands = Brand::when($search, function($query, $search) {
+            return $query->where('name', 'like', "%{$search}%");
+        })
+        ->orderBy('id', 'DESC')
+        ->paginate(5);
+
         return view('admin.brands', compact('brands'));
     }
 
@@ -137,9 +144,16 @@ class AdminController extends Controller
         return redirect()->route('admin.brands')->with('status', 'Brand berhasil dihapus');
     }
 
-    public function categories()
+    public function categories(Request $request)
     {
-        $categories = Category::orderBy('id','DESC')->paginate(10);
+        $search = $request->query('search');
+
+        $categories = Category::when($search, function($query, $search) {
+            return $query->where('name', 'like', "%{$search}%");
+        })
+        ->orderBy('id', 'DESC')
+        ->paginate(5);
+
         return view('admin.categories', compact('categories'));
     }
 
